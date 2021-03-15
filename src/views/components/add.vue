@@ -1,18 +1,20 @@
 <template>
   <div class="add">
-    <input
-      class="add__input"
-      type="text"
-      placeholder="todo's..."
-      v-model="newTodoItem"
-    >
-    <button
-      type="button"
-      class="add__button"
-      aria-label="투두 추가하기"
-      @click="addToItem"
-    >
-    </button>
+    <div class="add__inner">
+      <input
+        class="add__input"
+        type="text"
+        placeholder="todo's..."
+        v-model="newTodoItem"
+      >
+      <button
+        class="add__button"
+        aria-label="투두 추가하기"
+        @click="addToItem"
+        @keyup.enter="addToItem"
+      >
+      </button>
+    </div>
   </div>
 </template>
 
@@ -42,20 +44,23 @@ export default {
 .add {
   margin-top: 20px;
   width: 100%;
-  position: relative;
+  &__inner {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: -2px -2px 5px rgba($color: #f5f5f5, $alpha: 1.0), 3px 3px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
   &__input {
-    padding: 10px 40px 10px 10px;
-    border: 1px solid #999;
+    padding: 20px 40px 20px 10px;
     width: 100%;
     height: 100%;
-    background-color: #fff;
     font-size: 14px;
     color: #333;
     display: block;
   }
   &__button {
     position: absolute;
-    top: 19px;
+    top: 29px;
     right: 0;
     transform: translate(-50%, -50%);
     width: 20px;
