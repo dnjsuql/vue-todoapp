@@ -55,6 +55,7 @@ export default {
 .contents {
   padding: 0 20px;
   border: 1px solid #999;
+  background-color: #efefef;
   flex: 1;
 }
 </style>
