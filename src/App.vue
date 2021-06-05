@@ -10,6 +10,7 @@ import '@/assets/scss/style.scss'
 import Contents from '@/views/Contents.vue'
 import Header from '@/views/common/Header.vue'
 
+
 export default {
   name: 'App',
   components: {

@@ -1,26 +1,33 @@
 <template>
   <div class="contents">
-    <Add v-on:addItem="addOneItem" />
-    <List
-      v-bind:propsdata="todoItems"
-      v-on:removeItem="removeOneItem"
-    />
+    <Add @addItem="addOneItem" />
+    <List :propsdata="todoItems" @removeItem="removeOneItem" />
+    <Button @clickLogCheck="checking" />
+    <NewList :logdata="msg" />
+    <CommonButton v-bind:title="t"/>
   </div>
 </template>
 
 <script>
-import Add from '@/views/components/add.vue'
-import List from '@/views/components/list.vue'
+import Add from '@/views/components/Add.vue'
+import List from '@/views/components/List.vue'
+import Button from '@/views/components/Button.vue'
+import NewList from '@/views/components/NewList.vue'
+import CommonButton from '@/views/components/CommonButton.vue'
 
 export default {
   name: 'contents',
   components: {
     Add,
-    List
+    List,
+    Button,
+    NewList,
+    CommonButton
   },
   data() {
     return {
-      todoItems: []
+      todoItems: [],
+      msg: []
     };
   },
   created() {
@@ -46,6 +53,12 @@ export default {
       localStorage.removeItem(todoItem.item);
       this.todoItems.splice(index, 1);
     },
+    checking(item){
+      const value = {
+        itemz: item
+      };
+      this.msg.push(value);
+    }
   }
 }
 </script>

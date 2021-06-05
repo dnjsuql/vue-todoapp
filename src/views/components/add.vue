@@ -8,8 +8,8 @@
         v-model="newTodoItem"
       >
       <button
+        type="button"
         class="add__button"
-        aria-label="투두 추가하기"
         @click="addToItem"
         @keyup.enter="addToItem"
       >
@@ -20,7 +20,6 @@
 
 <script>
 export default {
-  name: 'add',
   data() {
     return {
       newTodoItem: ''

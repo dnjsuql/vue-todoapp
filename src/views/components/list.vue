@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: 'list',
+  name: 'List',
   props: ['propsdata'],
   methods: {
     removeTodo(todoItem, index) {
